@@ -17,7 +17,7 @@ const arrGroups = [
 // debugger
 
 function checkGroupName(names) {
-  const regEx = /^([A-Z]|[a-z])20\d{2}(-\d+)?$/g;
+  const regEx = /^([A-Z]|[a-z]){2}20\d{2}(-\d+)?$/g;
   const res = {};
   for (let groups of names) {
     res[`${groups}`] = `${regEx.test(groups) ? 'Succsess' : 'Error'}`;
