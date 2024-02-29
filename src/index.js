@@ -12,17 +12,17 @@ const arrGroups = [
   'FE2008-52',
   'Fm2008-23',
   'FM2022-1',
+  'FR2033-',
 ];
 
 // debugger
 
 function checkGroupName(names) {
-  const regEx = /^([A-Z]|[a-z]){2}20\d{2}(-\d+)?$/g;
-  const res = {};
-  for (let groups of names) {
-    res[`${groups}`] = `${regEx.test(groups) ? 'Succsess' : 'Error'}`;
-  }
-  return res;
+  const regEx = /^(FD|FM|FE|fd|fm|fe)20\d{2}(-\d+)?$/g;
+  
+  return regEx.test(names) ? 'Succsess' : 'Error';
 }
 
-console.log(checkGroupName(arrGroups));
+arrGroups.forEach((name) => {
+  console.log(`${name} - ${checkGroupName(name)}`)
+})
